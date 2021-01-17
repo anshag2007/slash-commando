@@ -16,7 +16,7 @@ bot.remove_command("help")
 
 @bot.event
 async def on_ready():
-	print('🖒')
+	print(f'LOGGED IN AS:\nNAME : {bot.user.name}\nID : {bot.user.id}')
 
 guild_ids = [727770350229782570]
 
@@ -40,5 +40,6 @@ async def ping(ctx: SlashContext):
 	
 """---------COMMANDS---------"""
 
-# SEE EXAMPLE.ENV FILE TO KNOW HOW TO TURN THE BOT ON
 bot.run(os.getenv("TOKEN"))
+
+"""----------START----------"""
