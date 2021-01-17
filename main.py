@@ -22,7 +22,7 @@ guild_ids = [727770350229782570]
 
 @bot.command()
 async def help(ctx):
-	em = discord.Embed(title="Slashy-Commando",description="**Commands**\n• /slashy : some bot info\n• /ping : gives bot ping",color=discord.Color.green ())
+	em = discord.Embed(title="Slash-Commando",description="**Commands**\n• /slashy : some bot info\n• /ping : gives bot ping",color=discord.Color.green ())
 	em.set_footer(text="All these commands are slash commands and are in beta (may not execute sometimes)")
 	await ctx.send(embed=em)
 
