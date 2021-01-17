@@ -2,7 +2,7 @@
 
 **Slash Commando is a slash commands bot using `discord.py` and `discord-py-slash-command` client.**
 
-#### Dependices 
+#### Packages Used
 - `discord.py`
 - `discord-py-slash-command`
 
