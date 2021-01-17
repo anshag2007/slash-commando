@@ -4,6 +4,7 @@ import discord
 import os
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
+from discord_slash.utils import manage_commands
 
 """---------IMPORTS-----------"""
 
@@ -20,6 +21,7 @@ async def on_ready():
 
 guild_ids = [727770350229782570]
 
+
 @bot.command()
 async def help(ctx):
 	em = discord.Embed(title="Slash-Commando",description="**Commands**\n• /slashy : some bot info\n• /ping : gives bot ping",color=discord.Color.green ())
@@ -27,17 +29,22 @@ async def help(ctx):
 	await ctx.send(embed=em)
 
 @slash.slash(name="slashy",
-description="Slash Commands Bot",
+description="Some info about SlashCommmando.",
 guild_ids=guild_ids)
 async def slashy(ctx: SlashContext):
     embed = discord.Embed(title="SlashCommando",description="Slash Commands bot made by Ansh, this is so cool!",color=discord.Color.green())
     await ctx.send(embeds=[embed])
     
-@slash.slash(name="ping",description="Gives Bot Latency",guild_ids=guild_ids)
+@slash.slash(name="ping",description="Get bot latency.",guild_ids=guild_ids)
 async def ping(ctx: SlashContext):
 	em = discord.Embed(title="Ping",description=f"Pong! {round(bot.latency*1000)}ms.",color=discord.Color.green())
 	await ctx.send(embeds=[em])
 	
+@slash.slash(name="echo",description="Echoes what you say.",options=[manage_commands.create_option("content","the content you want to be echoed.",3,True)],guild_ids=guild_ids)
+async def echo(ctx:SlashContext,msg:SlashContext):
+	em = discord.Embed(description=f"{msg}",color=discord.Color.green())
+	await ctx.send(embeds=[em])
+
 """---------COMMANDS---------"""
 
 bot.run(os.getenv("TOKEN"))
