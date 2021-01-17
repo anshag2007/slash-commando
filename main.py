@@ -5,8 +5,12 @@ import os
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 
+"""---------IMPORTS-----------"""
+
 bot = commands.Bot(command_prefix="/",intents=discord.Intents.all())
 slash = SlashCommand(bot,auto_register=True,auto_delete=True)
+
+"""-----BOT & SLASH CLIENT-----"""
 
 bot.remove_command("help")
 
@@ -33,5 +37,8 @@ async def slashy(ctx: SlashContext):
 async def ping(ctx: SlashContext):
 	em = discord.Embed(title="Ping",description=f"Pong! {round(bot.latency*1000)}ms.",color=discord.Color.green())
 	await ctx.send(embeds=[em])
-# SEE EXAMPLE.ENV FILE
+	
+"""---------COMMANDS---------"""
+
+# SEE EXAMPLE.ENV FILE TO KNOW HOW TO TURN THE BOT ON
 bot.run(os.getenv("TOKEN"))

@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "slashy-1"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+name = "slashy-commando"
+version = "1.0.0"
+description = "Slash Commands Bot"
+authors = ["AnshAg2007"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

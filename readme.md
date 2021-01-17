@@ -6,4 +6,4 @@
 - `discord.py`
 - `discord-py-slash-commands`
 
-#### This is a open-source project, the user has to give credits to `AnshAg2007`
+#### This is a open-source project,though you have to give credits to me
