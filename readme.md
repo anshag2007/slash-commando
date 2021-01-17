@@ -1,9 +1,11 @@
-﻿### AnshAg2007/slashy-commando
+﻿### AnshAg2007/slash-commando
 
-**Slashy Commando is a slash commands bot using `discord.py` and `discord-py-slash-command` client**
+**Slash Commando is a slash commands bot using `discord.py` and `discord-py-slash-command` client**
 
 #### Dependices 
 - `discord.py`
 - `discord-py-slash-commands`
 
+#### Bot Repl
+- [**AnshAg2007/slash-commando**](https://repl.it/@AnshAg2007/slash-commando)
 #### This is a open-source project,though you have to give credits to me

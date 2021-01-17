@@ -1,4 +1,4 @@
-""" Slashy Commando
+""" Slash Commando
 Slash Commands Bot Using discordpy and discord-py-slash-command client """
 import discord
 import os

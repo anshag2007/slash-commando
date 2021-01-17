@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "slashy-commando"
+name = "slash-commando"
 version = "1.0.0"
 description = "Slash Commands Bot"
 authors = ["AnshAg2007"]
