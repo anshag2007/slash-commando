@@ -19,7 +19,7 @@ bot.remove_command("help")
 async def on_ready():
 	print(f'LOGGED IN AS:\nNAME : {bot.user.name}\nID : {bot.user.id}')
 
-guild_ids = [727770350229782570]
+guild_ids = [727770350229782570,793226316862062593]
 
 
 @bot.command()
