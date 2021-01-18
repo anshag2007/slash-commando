@@ -31,8 +31,9 @@ async def help(ctx):
 @slash.slash(name="slash",
 description="Some info about SlashCommmando.",
 guild_ids=guild_ids)
-async def slash(ctx: SlashContext):
-    embed = discord.Embed(title="SlashCommando",description="Slash Commands bot made by Ansh, this is a open-source bot which uses `discord.py` and `discord-py-slash-command` client to execute slash commands\n**Bot Repository**\nYes! Its posted on Github and updates almost everyday\n[AnshAg2007/slash-commando](https://github.com/AnshAg2007/slash-command)\n**Bot Repl**\n",color=discord.Color.green())
+async def _slash(ctx: SlashContext):
+    embed = discord.Embed(title="SlashCommando",description="Slash Commands bot made by Ansh, this is a open-source bot which uses `discord.py` and `discord-py-slash-command` client to execute slash commands\n**Bot Repository**\nYes! Its posted on Github and updates almost everyday\n[AnshAg2007/slash-commando](https://github.com/AnshAg2007/slash-command)\n**Bot Repl**\nThis bot is being developed and hosted on repl.it and the repl is also public.\n[@AnshAg2007](https://repl.it/@AnshAg2007/slash-commando)",color=discord.Color.green())
+    embed.set_footer(text="Discord Slash Commands are in beta, commands may not execute sometimes")
     await ctx.send(embeds=[embed])
     
 @slash.slash(name="ping",description="Get bot latency.",guild_ids=guild_ids)
