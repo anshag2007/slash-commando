@@ -20,7 +20,7 @@ async def on_ready():
 	print(f'LOGGED IN AS:\nNAME : {bot.user.name}\nID : {bot.user.id}')
 
 guild_ids = [727770350229782570,793226316862062593]
-
+# SERVER IDS (THE SERVERS IN WHICH THE BOT IS ADDED)
 
 @bot.command()
 async def help(ctx):
@@ -28,11 +28,11 @@ async def help(ctx):
 	em.set_footer(text="All these commands are slash commands and are in beta (may not execute sometimes)")
 	await ctx.send(embed=em)
 
-@slash.slash(name="slashy",
+@slash.slash(name="slash",
 description="Some info about SlashCommmando.",
 guild_ids=guild_ids)
-async def slashy(ctx: SlashContext):
-    embed = discord.Embed(title="SlashCommando",description="Slash Commands bot made by Ansh, this is so cool!",color=discord.Color.green())
+async def slash(ctx: SlashContext):
+    embed = discord.Embed(title="SlashCommando",description="Slash Commands bot made by Ansh, this is a open-source bot which uses `discord.py` and `discord-py-slash-command` client to execute slash commands\n**Bot Repository**\nYes! Its posted on Github and updates almost everyday\n[AnshAg2007/slash-commando](https://github.com/AnshAg2007/slash-command)\n**Bot Repl**\n",color=discord.Color.green())
     await ctx.send(embeds=[embed])
     
 @slash.slash(name="ping",description="Get bot latency.",guild_ids=guild_ids)
