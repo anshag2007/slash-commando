@@ -52,17 +52,11 @@ async def embed(ctx:SlashContext,title,description,color,footer):
 	embed.set_footer(text=footer)
 	await ctx.send(embeds=[embed])
 	
-@slash.slash(name="color",description="Change color of someone's pfp to the color you wish.",options=[manage_commands.create_option("member","the person you wanna colorize.",3,False),manage_commands.create_option("color","the color(hex).",3,True)],guild_ids=guild_ids)
-async def _color(ctx:SlashContext,member:discord.Member=None,color):
-	if member == None:
-		member = ctx.author
-		em = discord.Embed(color=discord.Color.black())
-		em.set_image(url=f"https://some-random-api.ml/canvas/color?avatar={member.avatar_url()}&color=%23{color}")
-		await ctx.send(embeds=[em])
-	else:
-		em = discord.Embed(color=discord.Color.black())
-		em.set_image(url=f"https://some-random-api.ml/canvas/color?avatar={member.avatar_url()}&color=%23{color}")
-		await ctx.send(embeds=[em])
+@slash.slash(name="color",description="Change color of your pfp to the color you wish.",options=[manage_commands.create_option("color","the color you want the pfp to be colorized(hex).",3,True)],guild_ids=guild_ids)
+async def _color(ctx:SlashContext,color):
+	em = discord.Embed(color=discord.Color.green())
+	em.set_image(url=f"https://some-random-api.ml/canvas/color?avatar={ctx.author.avatar_url}&color=%23{color}")
+	await ctx.send(embeds=[em])
 		
 		
 
