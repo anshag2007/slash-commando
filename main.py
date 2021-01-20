@@ -46,14 +46,26 @@ async def echo(ctx:SlashContext,msg:SlashContext):
 	em = discord.Embed(description=f"{msg}",color=discord.Color.green())
 	await ctx.send(embeds=[em])
 	
-@slash.slash(name="embed",description="Makes a custom embed.",options=[manage_commands.create_option("title","the embed title.",3,True),manage_commands.create_option("description","the embed description.",3,True),manage_commands.create_option("color","the embed color(hex).",4,True),manage_commands.create_option("footer","the embed footer.",3,True)],guild_ids=guild_ids)
+@slash.slash(name="embed",description="Makes a custom embed.",options=[manage_commands.create_option("title","the embed title.",3,True),manage_commands.create_option("description","the embed description.",3,True),manage_commands.create_option("color","the embed color(hex).",3,True),manage_commands.create_option("footer","the embed footer.",3,True)],guild_ids=guild_ids)
 async def embed(ctx:SlashContext,title,description,color,footer):
-	try:
-		embed = discord.Embed(title=f"{title}",description=f"{description}",color=int(color))
-		embed.set_footer(text=footer)
-		await ctx.send(embeds=[embed])
-	except Exception as e:
-		await ctx.send(content=e)
+	embed = discord.Embed(title=f"{title}",description=f"{description}",color=int(color))
+	embed.set_footer(text=footer)
+	await ctx.send(embeds=[embed])
+	
+@slash.slash(name="color",description="Change color of someone's pfp to the color you wish.",options=[manage_commands.create_option("member","the person you wanna colorize.",3,False),manage_commands.create_option("color","the color(hex).",3,True)],guild_ids=guild_ids)
+async def _color(ctx:SlashContext,member:discord.Member=None,color):
+	if member == None:
+		member = ctx.author
+		em = discord.Embed(color=discord.Color.black())
+		em.set_image(url=f"https://some-random-api.ml/canvas/color?avatar={member.avatar_url()}&color=%23{color}")
+		await ctx.send(embeds=[em])
+	else:
+		em = discord.Embed(color=discord.Color.black())
+		em.set_image(url=f"https://some-random-api.ml/canvas/color?avatar={member.avatar_url()}&color=%23{color}")
+		await ctx.send(embeds=[em])
+		
+		
+
 
 """---------COMMANDS---------"""
 
