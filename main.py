@@ -54,6 +54,7 @@ async def embed(ctx:SlashContext,title,description,color,footer):
 	
 @slash.slash(name="color",description="Change color of your pfp to the color you wish.",options=[manage_commands.create_option("color","the color you want the pfp to be colorized(hex).",3,True)],guild_ids=guild_ids)
 async def _color(ctx:SlashContext,color):
+	color = color.lower()
 	em = discord.Embed(color=discord.Color.green())
 	em.set_image(url=f"https://some-random-api.ml/canvas/color?avatar={ctx.author.avatar_url}&color=%23{color}")
 	await ctx.send(embeds=[em])
